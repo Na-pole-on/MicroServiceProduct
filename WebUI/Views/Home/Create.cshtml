@@ -1,0 +1,42 @@
+﻿@model WebUI.Models.ItemViewModel
+
+<div class="modal modal-signin position-static d-block py-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Edit or add</h1>
+                <a asp-controller="Home" asp-action="Index" style="color: black; outline: none;">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <div class="modal-body p-5 pt-0">
+                <form asp-controller="Home" asp-action="Create">
+
+                    <div class="mb-3">
+                        <input asp-for="Name" type="text" class="form-control rounded-3" placeholder="Name of item">
+                    </div>
+
+                    <div class="mb-3">
+                        <input asp-for="Price" type="number" id="price" class="form-control rounded-3" placeholder="Price">
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea asp-for="Description" class="form-control rounded-3" placeholder="This is item about..."></textarea>
+                        <span asp-validation-for="Description" />
+                    </div>
+
+                    <span asp-validation-for="Id" />
+                    <span asp-validation-for="Name" />
+                    <span asp-validation-for="Price" />
+                    <span asp-validation-for="Description" />
+                    <span asp-validation-for="CreatedDate" />
+
+                    <button class="w-100 btn btn-lg rounded-3 btn-primary" type="submit">Add New Item</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
